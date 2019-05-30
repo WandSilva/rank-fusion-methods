@@ -23,7 +23,7 @@ public class MRA implements FusionMethod {
         int n = 0;
         int o = rankings.size()/2;
 
-        HashMap<String, Integer> result = new HashMap<>();
+        ArrayList<String>result = new ArrayList<>();
 
         while (n < rankSize){
             for (Map.Entry<String, Integer> pair : mraHash.entrySet()) {
@@ -31,17 +31,14 @@ public class MRA implements FusionMethod {
                 int m = c + mraHash.get(pair.getKey());
                 mraHash.put(pair.getKey(), m);
                 if (pair.getValue() > o){
-                    if(!result.containsKey(pair.getKey()))
-                        System.out.println(pair.getKey() + " M:" + m +" n:"+n);
-                    result.putIfAbsent(pair.getKey(), m);
+                    if(!result.contains(pair.getKey())) {
+                        result.add(pair.getKey());
+                    }
                 }
             }
             n++;
         }
-
-        System.out.println(result);
-        ArrayList<String> ranking = new ArrayList(result.keySet());
-        return ranking;
+        return result;
     }
 
     private int calculateC(String imageId, List<List<DigImage>> rankings, int n) {
