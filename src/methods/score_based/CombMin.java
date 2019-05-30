@@ -18,7 +18,7 @@ public class CombMin implements FusionMethod {
             for (DigImage image : ranking) {
 
                 if (scores.get(image.getId()) == null) {
-                    scores.put(image.getId(), new ArrayList<Double>());
+                    scores.put(image.getId(), new ArrayList<>());
                     scores.get(image.getId()).add(image.getScore());
                 } else {
                     scores.get(image.getId()).add(image.getScore());

@@ -52,7 +52,7 @@ public class CombANZ implements FusionMethod {
         return ranking;
     }
 
-    public int isIn(String imageId, List<List<DigImage>> rankings){
+    private int isIn(String imageId, List<List<DigImage>> rankings){
         int count=0;
         for (List<DigImage> ranking: rankings){
             for (DigImage imagem: ranking){

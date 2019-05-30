@@ -18,7 +18,7 @@ public class CombMNZ implements FusionMethod {
             for (DigImage image : ranking) {
 
                 if (scores.get(image) == null) {
-                    scores.put(image, new ArrayList<Double>());
+                    scores.put(image, new ArrayList<>());
                     scores.get(image).add(image.getScore());
                 } else {
                     scores.get(image).add(image.getScore());
@@ -50,7 +50,7 @@ public class CombMNZ implements FusionMethod {
         return ranking;
     }
 
-    public int isIn(String imageId, List<List<DigImage>> rankings){
+    private int isIn(String imageId, List<List<DigImage>> rankings){
         int count=0;
         for (List<DigImage> ranking: rankings){
             for (DigImage imagem: ranking){
