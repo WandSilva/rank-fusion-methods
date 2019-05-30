@@ -85,7 +85,7 @@ public class exec {
         System.out.println("MRA:");
         MRA mra = new MRA();
         result =  mra.fusion(rankings);
-        //System.out.println(result);
+        System.out.println(result);
 
     }
 }

@@ -32,7 +32,7 @@ public class RRF implements FusionMethod {
                                 LinkedHashMap::new));
 
         System.out.println(sorted);
-        ArrayList ranking = new ArrayList(sorted.keySet());
+        ArrayList<String> ranking = new ArrayList(sorted.keySet());
         return ranking;
     }
 }

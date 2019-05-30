@@ -31,7 +31,8 @@ public class MRA implements FusionMethod {
                 int m = c + mraHash.get(pair.getKey());
                 mraHash.put(pair.getKey(), m);
                 if (pair.getValue() > o){
-                    System.out.println(pair.getKey() + " " + m);
+                    if(!result.containsKey(pair.getKey()))
+                        System.out.println(pair.getKey() + " M:" + m +" n:"+n);
                     result.putIfAbsent(pair.getKey(), m);
                 }
             }
@@ -39,7 +40,8 @@ public class MRA implements FusionMethod {
         }
 
         System.out.println(result);
-        return null;
+        ArrayList<String> ranking = new ArrayList(result.keySet());
+        return ranking;
     }
 
     private int calculateC(String imageId, List<List<DigImage>> rankings, int n) {

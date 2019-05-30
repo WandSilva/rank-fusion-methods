@@ -20,7 +20,7 @@ public class Borda implements FusionMethod {
             int numVoted = 0;
             double vote;
 
-            for (DigImage image : ranking) {
+             for (DigImage image : ranking) {
 
                 if (votes.get(image.getId()) == null) {
                     votes.put(image.getId(), 1.0 / (numVoted + 1));
@@ -39,7 +39,6 @@ public class Borda implements FusionMethod {
                 .collect(
                         toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
                                 LinkedHashMap::new));
-
 
         System.out.println(sorted);
         ArrayList<String> ranking = new ArrayList(sorted.keySet());
