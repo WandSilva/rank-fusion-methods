@@ -7,7 +7,7 @@ import java.util.*;
 
 import static java.util.stream.Collectors.toMap;
 
-public class Rrf implements FusionMethod {
+public class RRF implements FusionMethod {
     @Override
     public ArrayList<String> fusion(List<List<DigImage>> rankings) {
 
